@@ -1,0 +1,44 @@
+body {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    background-color: darkslategray;
+}
+
+h1 {
+    text-align: center;
+}
+
+.center-grid {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+
+.grid {
+    justify-content: center;
+    display: flex;
+    width: 40rem;
+    height: 30rem;
+    max-height: 30rem;
+}
+
+.grid-row {
+    display: flex;
+    flex-flow:column nowrap;
+    flex: 1 1 auto;
+}
+
+.hover-effect{
+    background-color: white;
+}
+
+menu {
+    gap: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+button{
+    flex-grow: 0;
+}
