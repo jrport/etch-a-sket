@@ -102,3 +102,8 @@ button{
 button.active {
     background-color: black;
 }
+
+span {
+    text-align: center;
+    color: whitesmoke;
+}

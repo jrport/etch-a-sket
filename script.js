@@ -43,7 +43,7 @@ function generateGrid(gridSize){
 // Now add event handlers to trigger css states
 
 function addPaintEffect(node){
-    node.addEventListener("click",()=>{
+    node.addEventListener("mouseover",()=>{
         switch (curMode) {
             case "rainbow":
                 node.style.backgroundColor = getRndColor(); 
@@ -68,23 +68,38 @@ function clearGrid() {
     });
 }
 
-// Making the buttons change grid size
+// Getting grid size from the range selector
 
-const plus = document.querySelector("#plus");
-const minus = document.querySelector("#minus");
+const rangeSelector = document.querySelector("#size-slider");
 
-plus.addEventListener("click", ()=>{
-    gridSize++;
-    clearGrid()
-    generateGrid(gridSize);
-})
-
-
-minus.addEventListener("click", ()=>{
-    gridSize--;
+rangeSelector.addEventListener("input", (event) => {
+    gridSize = event.target.value;
     clearGrid();
     generateGrid(gridSize);
-})
+    updtSizeDisplay(gridSize);
+});
+
+// Depracated since now using slider to get selected
+// grid size from user.
+// Making the buttons change grid size
+
+// const plus = document.querySelector("#plus");
+// const minus = document.querySelector("#minus");
+// 
+// plus.addEventListener("click", ()=>{
+//     gridSize++;
+//     clearGrid();
+//     generateGrid(gridSize);
+//     updtSizeDisplay(gridSize);
+// })
+// 
+// 
+// minus.addEventListener("click", ()=>{
+//     gridSize--;
+//     clearGrid();
+//     generateGrid(gridSize);
+//     updtSizeDisplay(gridSize);
+// })
 
 // For the reset button
 
@@ -142,4 +157,12 @@ function activateBtn(newMode) {
         activeBtn = newMode;
         activeBtn.classList.add("active");
     }
+}
+
+// Update grid size count
+
+const sizeDisplay = document.querySelector("span");
+
+function updtSizeDisplay(newSize) {
+   sizeDisplay.textContent = `${newSize} X ${newSize}` 
 }
