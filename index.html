@@ -3,16 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Quadro em Branco</title>
     <link rel="stylesheet" href="./styles.css">
     <script src="./script.js" defer></script>
 </head>
 <body>
-    <h1>SKETCH</h1>
+    <h1>Seu quadro</h1>
     <div class="center-grid">
         <menu>
-            <button id="plus">+</button>
-            <button id="minus">-</button>
+            <div class="settings">
+                <div id="picker-center">
+                    <input id="colorPicker" type="color" value="#000000" />
+                </div>
+                <button id = "color">Cor</button>
+                <button id = "rainbow">Arco-Iris</button>
+                <button id = "eraser">Apagador</button>
+            </div>
+            <div class="control">
+                <button id="plus">+</button>
+                <button id="reset">Limpar</button>
+                <button id="minus">-</button>
+            </div>
         </menu>
         <div class="grid"></div>
     </div>
